@@ -16,7 +16,7 @@ export const useAuthStore = create((set, get) => ({
 
   checkAuth: async () => {
     try {
-      const res = await axiosInstance.get("https://fullstack-realtime-chat-5sbu.onrender.com/api/auth/signup");
+      const res = await axiosInstance.get("/auth/check");
 
       set({ authUser: res.data });
       get().connectSocket();
